@@ -11,11 +11,11 @@ class Page1(Window1):
         self.btn.clicked.connect(lambda: self.obtain_input())
 
     def obtain_input(self):
-        # print(self.txt.text())
-        webpage1 = Webpage1(self.txt.text())
+        webpage1 = Webpage1(self.txt.text())  # self.txt.text() is the input of the searching
         self.player_lst = webpage1.player_list
-        #print(self.player_lst)
 
+
+# get players` name list
 class Webpage1:
     def __init__(self, str):
         self.player_name = str

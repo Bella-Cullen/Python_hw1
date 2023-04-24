@@ -5,15 +5,20 @@ from PyQt5.QtGui import QPalette, QPixmap, QBrush
 
 class Window3(QWidget):
     def __init__(self):
+        #basic settings
         super().__init__()
-        self.setWindowTitle("Home of Football Lover")
+        self.setWindowTitle("Simple Player Dictionary")
         self.resize(1200, 800)
         self.move(300, 100)
+
+        #background setting
         palette = QPalette()
-        pix = QPixmap("C:/Users/ASUS/Desktop/background.jpg")
+        pix = QPixmap("C:/Users/ASUS/Desktop/python_hw1/Python_hw1/background.jpg")
         pix = pix.scaled(self.width(), self.height())
         palette.setBrush(QPalette.Background, QBrush(pix))
         self.setPalette(palette)
+
+        #elements settings
         self.btn_return = self.return_()
         self.name=self.attribute_show(0)
         self.player_picture=self.attribute_show(1)
@@ -25,9 +30,8 @@ class Window3(QWidget):
         self.height=self.attribute_show(7)
         self.nation=self.attribute_show(8)
         self.position_lst=self.attribute_show(9)
-        # self.all_attribute=[self.name,self.player_picture,self.team,self.team_picture,self.full_name,
-        #                     self.age,self.birthday,self.height,self.nation,self.position_lst]
 
+    #button returning to page2
     def return_(self):
         butn=QPushButton(self)
         butn.setText("返回")
